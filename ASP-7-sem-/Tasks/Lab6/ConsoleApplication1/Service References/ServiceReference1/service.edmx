@@ -1,0 +1,64 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="lab6Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Note">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="id_s" Type="Edm.Int32" />
+        <Property Name="subj" Type="Edm.String" MaxLength="25" FixedLength="false" Unicode="true" />
+        <Property Name="note1" Type="Edm.String" MaxLength="25" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Students" Relationship="lab6Model.FK__Note__id_s__267ABA7A" ToRole="Students" FromRole="Note" />
+      </EntityType>
+      <EntityType Name="Students">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="name" Type="Edm.String" MaxLength="20" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Note" Relationship="lab6Model.FK__Note__id_s__267ABA7A" ToRole="Note" FromRole="Students" />
+      </EntityType>
+      <Association Name="FK__Note__id_s__267ABA7A">
+        <End Type="lab6Model.Students" Role="Students" Multiplicity="0..1" />
+        <End Type="lab6Model.Note" Role="Note" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Students">
+            <PropertyRef Name="id" />
+          </Principal>
+          <Dependent Role="Note">
+            <PropertyRef Name="id_s" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+    </Schema>
+    <Schema Namespace="Lab6" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="lab6Entities" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Note" EntityType="lab6Model.Note" />
+        <EntitySet Name="Students" EntityType="lab6Model.Students" />
+        <FunctionImport Name="ChangeNote" ReturnType="Collection(lab6Model.Note)" EntitySet="Note" m:HttpMethod="GET">
+          <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="subject" Type="Edm.String" />
+          <Parameter Name="Note" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="studentId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="InsertNote" ReturnType="Collection(lab6Model.Note)" EntitySet="Note" m:HttpMethod="GET">
+          <Parameter Name="subject" Type="Edm.String" />
+          <Parameter Name="Note" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="studentId" Type="Edm.Int32" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="ChangeStudent" ReturnType="Collection(lab6Model.Students)" EntitySet="Students" m:HttpMethod="GET">
+          <Parameter Name="id" Type="Edm.Int32" Nullable="false" />
+          <Parameter Name="name" Type="Edm.String" />
+        </FunctionImport>
+        <FunctionImport Name="InsertStudent" ReturnType="Collection(lab6Model.Students)" EntitySet="Students" m:HttpMethod="GET">
+          <Parameter Name="name" Type="Edm.String" />
+        </FunctionImport>
+        <AssociationSet Name="FK__Note__id_s__267ABA7A" Association="lab6Model.FK__Note__id_s__267ABA7A">
+          <End Role="Note" EntitySet="Note" />
+          <End Role="Students" EntitySet="Students" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

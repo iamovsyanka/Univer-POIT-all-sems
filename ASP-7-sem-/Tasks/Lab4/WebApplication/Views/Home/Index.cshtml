@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="text/javascript" src="~/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    Post: <input id="x" type="text" />
+    <input id="y" type="text" />
+    <input id="res" type="text" />
+    <button onclick="Post()">Post</button>
+    <br />
+    <script>
+        function Post() {
+            var x = $("#x").val();
+            var y = $("#y").val();
+
+            $.ajax(
+                {
+                    url: "http://localhost:55422/Simplex.asmx/ASMX%20AddS(int,%20int)",
+                    dataType: 'json',
+                    data: { text: `{"x":${x},"y":${y}}` },
+                    method: 'POST',
+
+                    success: function (data) {
+                        $("#res").val(data);
+                    }
+                            
+                }
+            );
+        }
+    </script>
+</body>
+</html>

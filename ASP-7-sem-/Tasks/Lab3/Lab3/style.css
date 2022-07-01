@@ -1,0 +1,8 @@
+﻿.container {
+    display: flex;
+    flex-direction: row;
+}
+
+#tableBlock {
+    margin-right: 10px;
+}

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="input">
+
+    <button value="GET" id="getBtn">GET</button>
+    <button value="POST" id="postBtn">POST</button>
+    <button value="PUT" id="putBtn">PUT</button>
+    <button value="DELETE" id="deleteBtn">DELETE</button>
+
+    <div id="output"></div>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#getBtn").click(function () {
+            $.ajax({
+                url: "http://localhost:63501/api/values",
+                success: function (data) {
+                    $("#output").html(data);
+                }
+            });
+        });
+
+        $("#postBtn").click(function () {
+            let param = $("#input").val();
+            $.ajax({
+                url: `http://localhost:63501/api/values?result=${param}`,
+                method: "POST"
+            });
+        });
+
+        $("#putBtn").click(function () {
+            let param = $("#input").val();
+            $.ajax({
+                url: `http://localhost:63501/api/values?add=${param}`,
+                method: "PUT"
+            });
+        });
+
+        $("#deleteBtn").click(function () {
+            $.ajax({
+                url: "http://localhost:63501/api/values",
+                method: "DELETE"
+            });
+        });
+    </script>
+</body>
+</html>

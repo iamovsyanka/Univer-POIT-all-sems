@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "831931bb-7304-4b65-83e3-15f872664927",
+		"name": "ASP-7-sem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lab1",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lab4",
+			"item": [
+				{
+					"name": "sum",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Length",
+								"value": "length",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Host",
+								"value": "localhost",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <sum xmlns=\"http://kao/\">\r\n      <a1>\r\n        <s>string</s>\r\n        <k>1</k>\r\n        <f>1</f>\r\n      </a1>\r\n      <a2>\r\n        <s>string</s>\r\n        <k>2</k>\r\n        <f>3</f>\r\n      </a2>\r\n    </sum>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44327/Simplex.asmx?op=sum",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44327",
+							"path": [
+								"Simplex.asmx"
+							],
+							"query": [
+								{
+									"key": "op",
+									"value": "sum"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "x",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "y",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44327/Simplex.asmx/add",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44327",
+							"path": [
+								"Simplex.asmx",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lab6",
+			"item": [
+				{
+					"name": "get students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students?$format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students"
+							],
+							"query": [
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students(7)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students(7)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order by asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students?$orderby=name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students"
+							],
+							"query": [
+								{
+									"key": "$orderby",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order by desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students?$orderby=name desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students"
+							],
+							"query": [
+								{
+									"key": "$orderby",
+									"value": "name desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "select",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students?$select=name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students"
+							],
+							"query": [
+								{
+									"key": "$select",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/ChangeStudent?id=1&name='fvd'",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"ChangeStudent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "'fvd'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Students?$filter=id eq 1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Students"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "id eq 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "get all notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Note?$filter=(id_s eq 7)&$format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Note"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "(id_s eq 7)"
+								},
+								{
+									"key": "$format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert note",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/InsertNote?id=9&subject='PWS'&Note='8'&studentId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"InsertNote"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "9"
+								},
+								{
+									"key": "subject",
+									"value": "'PWS'"
+								},
+								{
+									"key": "Note",
+									"value": "'8'"
+								},
+								{
+									"key": "studentId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lab7",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:61418/WcfDataService2.svc/Note?$filter=(id_s eq 7)&$format=rss",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "61418",
+							"path": [
+								"WcfDataService2.svc",
+								"Note"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "(id_s eq 7)"
+								},
+								{
+									"key": "$format",
+									"value": "rss"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lab8",
+			"item": [
+				{
+					"name": "getM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/api/RAA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"api",
+								"RAA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"SetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/api/RAA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"api",
+								"RAA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"AddM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 5\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/api/RAA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"api",
+								"RAA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "error method",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"2\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"jghfds\",\r\n        \"params\": {\r\n            \"key\": 1,\r\n            \"value\": 10\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/api/RAA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"api",
+								"RAA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "error del 0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"SetM\",\r\n        \"params\": {\r\n            \"key\": 2,\r\n            \"value\": 0\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"2\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"DivM\",\r\n        \"params\": {\r\n            \"key\": 2,\r\n            \"value\": 0\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/api/JR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"api",
+								"JR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"ErrorExit\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 5\r\n        }\r\n    },\r\n        {\r\n        \"id\": \"1\",\r\n        \"jsonRPC\": \"2.0\",\r\n        \"method\": \"GetM\",\r\n        \"params\": {\r\n            \"key\": 6,\r\n            \"value\": 10\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54509/RAA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54509",
+							"path": [
+								"RAA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab1</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        <form>
+            <input type="button" onclick="getResult()" value="Get result" /><br />
+            <input type="button" onclick="deleteResult()" value="Delete from stack" /><br />
+            <input type="number" id="number" />
+            <input type="button" onclick="postResult()" value="Update result" />
+            <input type="button" onclick="putResult()" value="Add to stack" />
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const url = 'http://localhost:44444/.kao';
+
+        function getResult() {
+            fetch(url, { method: 'GET', mode: 'no-cors'})
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = JSON.stringify(data);
+                })
+                .catch(err => console.error(err.message));
+        }
+
+        function postResult() {
+            let result = document.getElementById('number').value;
+
+            fetch(`${url}?RESULT=${result}`, {method: 'POST', mode: 'no-cors'})
+                .then(async response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = JSON.stringify(data);
+                })
+                .catch(err => console.error(err.message));
+        }
+
+        function putResult() {
+            let result = document.getElementById('number').value;
+
+            fetch(`${url}?ADD=${result}`, { method: 'PUT' })
+                .then(async response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = JSON.stringify(data);
+                })
+                .catch(err => console.error(err.message));
+        }
+
+        function deleteResult() {
+            fetch(url, { method: 'DELETE'})
+                .then(async response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = JSON.stringify(data);
+                })
+                .catch(err => console.error(err.message));
+        }
+    </script>
+</body>
+</html>
