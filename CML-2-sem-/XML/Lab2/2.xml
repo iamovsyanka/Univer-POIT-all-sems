@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="poit"> 
+   <xs:element name="info">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="universe" type="xs:string"/> 
+            <xs:element name="ball" type="xs:string"/> 
+            <xs:element name="plan" type="xs:string"/> 
+            <xs:element name="gorod" type="xs:string"/> 
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   </xs:element>
+</xs:schema>

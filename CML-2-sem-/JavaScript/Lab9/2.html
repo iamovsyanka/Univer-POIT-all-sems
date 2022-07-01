@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Передвижение по прямой линии</title>
+    <style>
+        #sv {
+            position: relative;
+            cursor: pointer;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="chmok">
+    <img src="2.png" id="sv">
+    <img src="2p.png" id="sv" align="right">
+</div>
+
+<script>
+    window.onload = function () {
+        const Timosha1 = document.getElementsByTagName("IMG")[0];
+        const Timosha2 = document.getElementsByTagName("IMG")[1];
+        document.getElementById("chmok").onclick = function () {
+            let start = Date.now();
+            let t = setInterval(function () {
+                let timePassed = Date.now() - start;
+                Timosha1.style.left = timePassed / 5 + 'px';
+                Timosha2.style.right = timePassed / 5 + 'px';
+                if (timePassed > 2000)
+                    clearInterval(t);
+
+            }, 20);
+        }
+    }
+</script>
+</body>
+</html>

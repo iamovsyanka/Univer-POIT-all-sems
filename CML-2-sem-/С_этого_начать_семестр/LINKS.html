@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LINKS</title>
+	<style>
+		ul {
+			margin: 5px;
+			padding: 4px;
+		}
+
+		li {
+			display: inline; 
+			margin-right: -6px;
+			border-right: 3px solid red;
+		}
+
+		a:hover {
+			color: red;
+		}
+
+		td {
+			padding: 7px;
+			border-right: 1px solid red;
+		}
+
+		@keyframes hide {
+			0%{opacity: 0} 
+			10%{opacity: 1}
+			90%{opacity: 1}
+			100%{opacity: 0}
+		}
+
+		.div {
+			animation: hide 5s infinite;
+		}
+	</style>
+</head>
+<body>
+	<div class="div">
+		<ul>
+			<li><a href="">первая ссылка</a></li>
+			<li><a href="">вторая ссылка</a></li>
+			<li><a href="">третья ссылка</a></li>
+			<li><a href="">четвертая ссылка</a></li>
+			<li><a href="">пятая ссылка</a></li>
+		</ul>
+	</div>
+	<div class="div">
+		<table>
+			<tr>
+				<td><p><a href="">первая ссылка</a></p></td>
+				<td><p><a href="">вторая ссылка</a></p></td>
+				<td><p><a href="">третья ссылка</a></p></td>
+				<td><p><a href="">четвертая ссылка</a></p></td>
+				<td><p><a href="">пятая ссылка</a></p></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

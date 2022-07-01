@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+    <style>
+        #p {
+            color: blue;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<p id="p" onclick="replase()">Нажми на меня</p>
+<script>
+	const text = document.getElementById('p');
+	const replase = () => text.innerHTML = '<img src="5.jpg">';
+</script>
+</body>
+</html>

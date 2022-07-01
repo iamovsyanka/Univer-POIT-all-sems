@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+<body>
+<script>
+    let mas = new Array();
+    mas[0] = 6 * Math.pow(3.14, 2) + 3 * Math.exp(8);
+    mas[1] = 2 * Math.cos(4) + Math.cos(12) + 8 * Math.exp(3);
+    mas[2] = 3 * Math.sin(9) + Math.log(5) + Math.pow(3, 0.5);
+    mas[3] = 2 * Math.tan(5) + 6 * 3.14 + Math.pow(12, 0.5);
+
+    document.write("<p align='center' style='font-size: 40px;'>" + "Массив:" + "</p>");
+    for (var i = 0; i < 4; i++) {
+        document.write("<p align='center' style='font-size: 30px;'>" + (i + 1) + ")\t" + mas[i] + "\n" + "</p>");
+    }
+
+    let min = mas[0], max = mas[0], minj = 0, maxj = 0;
+
+    for (var j = 0; j < 4; j++) {
+        if (mas[j] < min) {
+            min = mas[j];
+            minj = j;
+        }
+    }
+
+    for (var j = 0; j < 4; j++) {
+        if (max < mas[j]) {
+            max = mas[j];
+            maxj = j;
+        }
+    }
+
+    document.write("<p style='font-size: 20px;'>" + "Минимальный элемент\t" + min + "\tНомер минимального элемент\t" + minj + "\n" + "</p>")
+    document.write("<p style='font-size: 20px;'>" + "Максимальный элемент\t" + max + "\tНомер максимального элемент\t" + maxj + "</p>")
+</script>
+</body>
+</html>

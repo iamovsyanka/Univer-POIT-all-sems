@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+	<link rel="stylesheet" type="text/css" href="1.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<text x="500" y="100" textLength="300" lengthAdjust="spacingAndGlyphs" rotate="0,10,20,30,30,20,10,0" transform="rotate(8)">Primer #1
+			<tspan dx="100" dy="200">Primer #2</tspan>
+		</text>
+
+  <defs>
+    <path id="textpath" fill="none" stroke="#000000"
+     d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,
+131.91,264,150c40.67"/>
+  </defs>
+  
+  <use xlink:href="#textpath"/>
+  <text x="40" y="100" font-size="10">
+  <textPath xlink:href="#textpath">
+    Primer #3
+  </textPath>
+  </text>
+	</svg>
+</body>
+</html>

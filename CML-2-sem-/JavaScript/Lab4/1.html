@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+<body>
+<script>
+    function Gruppa(n, spec, kolich) {
+        this.n = n;
+        this.spec = spec;
+        this.kolich = kolich;
+        this.add_stud = function add_stud(k) {
+            this.kolich += k;
+            document.write('В группу\t' + this.n + ' добавили\t' + k + ' студентов.<br\>');
+        }
+
+        this.sub_stud = function sub_stud(x) {
+            this.kolich -= x;
+            document.write('Из группы\t' + this.n + ' отчислили\t' + x + ' студентов.<br\>');
+        }
+    }
+
+    Gruppa.prototype.kurs = this.kurs
+    gr1 = new Gruppa(2, 'ИСиТ', 28);
+    gr1.add_stud(2);
+    gr1.kurs = 2;
+    document.write(gr1.n + "\t" + gr1.spec + "\t" + gr1.kolich + "\t" + gr1.kurs + "</br>");
+    document.write("</br>");
+
+    gr2 = new Gruppa(4, 'ПОИТ', 31);
+    gr2.sub_stud(20);
+    gr2.add_stud(5);
+    gr2.kurs = 1;
+    document.write(gr2.n + "\t" + gr2.spec + "\t" + gr2.kolich + "\t" + gr2.kurs + "</br>");
+    document.write("</br>");
+
+    gr3 = new Gruppa(6, 'ПОИТ', 30);
+    gr3.sub_stud(30);
+    gr3.add_stud(1);
+    gr3.kurs = 3;
+    document.write(gr3.n + "\t" + gr3.spec + "\t" + gr3.kolich + "\t" + gr3.kurs + "</br>");
+    document.write("</br>");
+
+    gr4 = new Gruppa(1, 'ИСиТ', 30);
+    gr4.sub_stud(5);
+    gr4.add_stud(4);
+    gr4.kurs = 4;
+    document.write(gr4.n + "\t" + gr4.spec + "\t" + gr4.kolich + "\t" + gr4.kurs + "</br>");
+    document.write("</br>");
+</script>
+</body>
+</html>

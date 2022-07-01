@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    function Student(nam, familia, OAiP, OIT, matem, fizika, ALOTsVM) {
+        this.nam = nam;
+        this.familia = familia;
+        this.OAiP = OAiP;
+        this.OIT = OIT;
+        this.matem = matem;
+        this.fizika = fizika;
+        this.ALOTsVM = ALOTsVM;
+        this.out_stud = function out_stud() {
+            alert("Имя: " + this.nam + "\nФамилия: " + this.familia);
+        }
+
+        this.srball = function srball() {
+            k = (this.OAiP + this.OIT + this.matem + this.fizika + this.ALOTsVM) / 5;
+            document.write("Средняя балл\t" + k + "</br>");
+        }
+    }
+
+    Student.prototype.step = this.step;
+    st1 = new Student('Иван', 'Иванов', 4, 7, 6, 9, 8);
+    st1.out_stud();
+    st1.srball();
+    st1.step = 80.1;
+    document.write(st1.nam + "\t" + st1.familia + "</br>" + "Оценки: " + st1.OAiP + "\t" + st1.OIT + "\t" + st1.matem + "\t" + st1.fizika + "\t" + st1.ALOTsVM + "\t" + "Размер стипендии\t " + st1.step + "</br>" + "</br>");
+
+    st2 = new Student('Сидр', 'Сидорович', 4, 4, 4, 4, 4);
+    st2.out_stud();
+    st2.srball();
+    st2.step = document.write(st2.nam + "\t" + st2.familia + "</br>" + "Оценки: " + st2.OAiP + "\t" + st2.OIT + "\t" + st2.matem + "\t" + st2.fizika + "\t" + st2.ALOTsVM + "\t" + "Размер стипендии\t " + st2.step + "</br>" + "</br>");
+
+    st3 = new Student('Петр', 'Петров', 9, 9, 9, 7, 8);
+    st3.out_stud();
+    st3.srball();
+    st3.step = 93.44;
+    document.write(st3.nam + "\t" + st3.familia + "</br>" + "Оценки: " + st3.OAiP + "\t" + st3.OIT + "\t" + st3.matem + "\t" + st3.fizika + "\t" + st3.ALOTsVM + "\t" + "Размер стипендии\t " + st3.step + "</br>" + "</br>");
+</script>
+</body>
+</html>

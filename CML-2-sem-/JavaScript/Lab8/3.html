@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<img id="sv" src="1.jpg" onClick="imgsrc();">
+<script>
+    let i = 0;
+    const Timosha = document.getElementById('sv');
+    const Timoshi = ['2.jpg', '3.jpg', '4.jpg', '1.jpg'];
+
+    function imgsrc() {
+        Timosha.src = Timoshi[i];
+        i++;
+    }
+
+    $(document).ready(function () {
+        $("img").css("display", "block").css("margin", "0 auto");
+        $("p").click(function () {
+            $("p").css("fontSize", "70px")
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="1.xslt"?>
+<gruppa>
+	<st>
+		<fam>Петров</fam>
+		<name>Петр</name>
+		<otch>Петрович</otch>
+		<srball>3</srball>
+	</st>
+	<st>
+		<fam>Александров</fam>
+		<name>Александр</name>
+		<otch>Александрович</otch>
+		<srball>3</srball>
+	</st>
+</gruppa>

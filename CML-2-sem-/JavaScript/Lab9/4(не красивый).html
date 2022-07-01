@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+        <br />Цвет графика:
+        <select id="myID">
+            <option value="red">красный</option>
+            <option value="pink">розовый</option>
+            <option value="yellow">желтый</option>
+            <option value="blue">синий</option>
+        </select>
+    </form>
+    <form>
+        <p align="center">Задание 4</p>
+        <input type='radio' name='s' value='q' onclick='_1()' /> y=x2 <br />
+        <input type='radio' name='s' value='w' onclick='_2()' /> y=x3 <br />
+        <input type='radio' name='s' value='e' onclick='_3()' /> y=sin(x) <br />
+        <input type='radio' name='s' value='r' onclick='_4()' /> y=cos(x)
+    </form>
+    <script>
+        let val = "";
+        const obj = document.getElementById("myID");
+        setInterval(function () {
+            for (i = 0; i < 4; i++) {
+                if (obj.options[i].selected === true) {
+                    val = obj.options[i].value;
+                    break;
+                }
+            }
+        }, 10)
+
+        function _1() {
+            document.write(" График функции Y=X^2 при -10 < X < 10 ");
+            document.write(" <style>div{position:absolute}</style> ");
+            w = screen.width;
+            h = screen.height;
+            x0 = w / 2;
+            y0 = h / 2;
+            for (i = 1; i < w; i = i + 8) document.write(" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < h; i = i + 8) document.write(" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            kx = w / 70;
+            ky = h / 70;
+            document.write("<font style=\"color:" + val + ";\">");
+            for (x = -10; x < 10; x = x + 0.01) {
+                y = x ** 2
+                document.write("<div   style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            }
+        }
+
+        function _2() {
+            document.write(" График функции Y=X^3 при -10 < X < 10 ");
+            document.write(" <style>div{position:absolute}</style> ");
+            w = screen.width;
+            h = screen.height;
+            x0 = w / 2;
+            y0 = h / 2;
+            for (i = 1; i < w; i = i + 8) document.write(" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < h; i = i + 8) document.write(" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            kx = w / 70;
+            ky = h / 70;
+            document.write("<font style=\"color:" + val + ";\">");
+            for (x = -10; x < 10; x = x + 0.01) {
+                y = x ** 3
+                document.write("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            }
+        }
+
+        function _3() {
+            document.write(" График функции Y=X*sin(x) при -40 < X < 40 ");
+            document.write(" <style>div{position:absolute}</style> ");
+            w = screen.width;
+            h = screen.height;
+            x0 = w / 2;
+            y0 = h / 2;
+            for (i = 1; i < w; i = i + 8) document.write(" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < h; i = i + 8) document.write(" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            kx = w / 70;
+            ky = h / 70;
+            document.write("<font style=\"color:" + val + ";\">");
+            for (x = -40; x < 40; x = x + 0.01) {
+                y = Math.sin(x);
+                document.write("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            }
+        }
+
+        function _4() {
+            document.write(" График функции Y=X*cos(x) при -40 < X < 40 ");
+            document.write(" <style>div{position:absolute}</style> ");
+            w = screen.width;
+            h = screen.height;
+            x0 = w / 2;
+            y0 = h / 2;
+            for (i = 1; i < w; i = i + 8) document.write(" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < h; i = i + 8) document.write(" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            kx = w / 70;
+            ky = h / 70;
+            document.write("<font style=\"color:" + val + ";\">");
+            for (x = -40; x < 40; x = x + 0.01) {
+                y = Math.cos(x);
+                document.write("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            }
+        }
+    </script>
+
+</body>
+</html>

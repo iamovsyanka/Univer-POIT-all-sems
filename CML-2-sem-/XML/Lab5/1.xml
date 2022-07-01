@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="1.xslt"?>
+<gruppa>
+	<st>
+		<fam>Козловский</fam>
+		<name>Андрей</name>
+		<otch>Сергеевич</otch>
+		<srball>10</srball>
+	</st>
+	<st>
+		<fam>Карпушевич</fam>
+		<name>Оксана</name>
+		<otch>Васильевна</otch>
+		<srball>10</srball>
+	</st>
+</gruppa>

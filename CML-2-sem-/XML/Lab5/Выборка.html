@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Вывести информацию о первом студенте</title>
+</head>
+<body>
+  <table border="1" align="center">
+
+  <th style="text-align:center">Фамилия</th>
+  <th style="text-align:center">Имя</th>
+  <th style="text-align:center">Отчество</th>
+  <th style="text-align:center">Средний балл</th>
+
+  <tr>      
+  	<td id="fam"></td>
+     <td id="name"></td> 
+     <td id="otch"></td>
+     <td style="text-align:center" id="srball"></td>
+  </tr>
+
+ </table>
+
+   <script>
+      if (window.XMLHttpRequest) /*Объект XMLHttpRequest дает возможность из JavaScript делать HTTP-запросы к серверу без перезагрузки страницы*/
+      {
+         xmlhttp = new XMLHttpRequest();
+         // Создаём новый объект XMLHttpRequest
+      }
+      else
+      { 
+         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+x=prompt("Введите номер файл", '1-2');
+if (x==1)
+{
+	xmlhttp.open("GET","1.xml",false); // Конфигурируем его: GET-запрос на URL "1.xml" //async – если установлено в false, то запрос производится синхронно
+    xmlhttp.send(); // Отсылаем запрос
+    xmlDoc = xmlhttp.responseXML;	
+}
+if(x==2)
+{
+	  xmlhttp.open("GET","2.xml",false);
+      xmlhttp.send();
+      xmlDoc = xmlhttp.responseXML;	
+}
+      document.getElementById("fam").innerHTML = xmlDoc.getElementsByTagName("fam")[0].childNodes[0].nodeValue;
+      document.getElementById("name").innerHTML = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+      document.getElementById("otch").innerHTML = xmlDoc.getElementsByTagName("otch")[0].childNodes[0].nodeValue;
+      document.getElementById("srball").innerHTML = xmlDoc.getElementsByTagName("srball")[0].childNodes[0].nodeValue;
+   </script>
+
+</body>
+</html>

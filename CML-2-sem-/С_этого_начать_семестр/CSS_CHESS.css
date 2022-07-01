@@ -1,0 +1,17 @@
+table {
+    width: 300px;
+    display: flex; 
+    border-collapse: collapse; 
+    border: solid grey 1px;
+}
+
+tr {
+    height: 35px;
+    border: solid grey 1px; 
+}
+        
+td {
+    width:50px;
+    border:solid grey 1px;
+ }
+

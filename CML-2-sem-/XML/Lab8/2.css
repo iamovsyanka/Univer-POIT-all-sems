@@ -1,0 +1,25 @@
+svg
+{
+	height: 500px;
+	width: 1350px;
+	border: 2px double black;
+	fill: #FAEBD7;
+}
+
+#text1 
+{
+	fill: #00FF00;
+	font-size: 70px;
+	text-shadow: #cccccc 17px -8px 6px;
+	stroke: blue;
+	font-family: Snell Roundhand, cursive;
+}
+
+#text2
+{
+	fill: #8A2BE2;
+	font-size: 60px;
+	font-style: oblique;
+	font-family: FreeMono, monospace;
+	stroke: black;
+}

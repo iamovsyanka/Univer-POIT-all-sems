@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+<script>
+    setInterval(function clock() {
+        const x = new Date();
+        document.getElementById('time').innerHTML = ("<table border='2' cellspacing='0' cellpadding='2'>" + "<tr>" + "<td>" + "Год" + "</td>" + "<td>" + x.getFullYear() + "</td>" + "</tr>" + "<tr>" + "<td>" + "Месяц" + "</td>" + "<td>" + (x.getMonth() + 1) + "</td>" + "</tr>" + "<tr>" + "<td>" + "День" + "</td>" + "<td>" + x.getDate() + "</td>" + "</tr>" + "<tr>" + "<td>" + "Час" + "</td>" + "<td>" + x.getHours() + "</td>" + "</tr>" + "<tr>" + "<td>" + "Минуты" + "</td>" + "<td>" + x.getMinutes() + "</td>" + "</tr>" + "<tr>" + "<td>" + "Секунды" + "</td>" + "<td>" + x.getSeconds() + "</td>" + "</tr>" + "</table>");
+    }, 1000);
+</script>
+
+<div id="time"></div>
+</body>
+</html>

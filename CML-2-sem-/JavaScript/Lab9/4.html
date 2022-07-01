@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Графики</title>
+    <script src="jquery.js"></script>
+    <style>
+        .border {
+            border: 3px blue double;
+            align-content: center;
+            border-radius: 10px;
+            width: 1000px;
+        }
+
+        #paint {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<form class=border name=gr>
+    <input type="radio" name=g value="1"/> <img src="x2.jpg">
+    <input type="radio" name=g value="2"/> <img src="x3.jpg">
+    <input type="radio" name=g value="3"/> <img src="sin.jpg">
+    <input type="radio" name=g value="4"/> <img src="cos.jpg">
+</form>
+<input type='button' id="mybutton" value='Выберете график'>
+<div id=paint></div>
+<img src="Ось.jpg">
+<script>
+    let Vbor;
+    const graph = document.getElementById('paint');
+    const rad = document.getElementsByName('g');
+    document.getElementById("mybutton").onclick = function () {
+
+        for (let i = 0; i < rad.length; i++) {
+            if (rad[i].checked) {
+                Vbor = rad[i].value;
+            }
+            graph.innerHTML = " ";
+            switch (Vbor) {
+                case '1':
+                    for (var x = -14; x <= 14; x += 0.1) {
+                        var y1 = x * x;
+                        var x1 = x * 10;
+                        var oX = 400 - x1;
+                        var oY = 407 - y1;
+                        graph.innerHTML += "<div style='position: absolute; width: 2px; height: 2px; background-color:yellow; left: " + oX + "px; top: " + oY + "px'></div>";
+                    }
+                    break;
+                case '2':
+                    for (var x = 5.5; x >= -5.5; x -= 0.1) {
+                        var y1 = x * x * x;
+                        var x1 = x * (-12);
+                        var oX = 400 - x1;
+                        var oY = 407 - y1;
+                        graph.innerHTML += "<div style='position: absolute; width: 3px; height: 3px; background-color:yellow; left: " + oX + "px; top: " + oY + "px'></div>";
+                    }
+                    break;
+                case '3':
+                    for (var x = 10; x >= -20; x -= 0.1) {
+                        var y1 = Math.sin(x) * 50;
+                        var x1 = x * (18);
+                        var oX = 345 - x1;
+                        var oY = 407 - y1;
+                        graph.innerHTML += "<div style='position: absolute; width: 2px; height: 2px; background-color:yellow; left: " + oX + "px; top: " + oY + "px'></div>";
+                    }
+                    break;
+                case '4':
+                    for (var x = 10; x >= -10; x -= 0.1) {
+                        var y1 = Math.cos(x) * 50;
+                        var x1 = x * (18);
+                        var oX = 400 - x1;
+                        var oY = 407 - y1;
+                        graph.innerHTML += "<div style='position: absolute; width: 2px; height: 2px; background-color:yellow; left: " + oX + "px; top: " + oY + "px'></div>";
+                    }
+                    break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

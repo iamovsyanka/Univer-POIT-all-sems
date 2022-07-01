@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Перемещение изображения</title>
+</head>
+<body>
+<img src="1.png" id="sv" width="300px" style="position: absolute">
+<div id="text">Перетащи меня</div>
+
+<script>
+    const Timosha = document.getElementById('sv');
+
+    Timosha.onmousedown = function (svinka) {
+        dvig(svinka);
+
+        function dvig(svinka) {
+            Timosha.style.left = svinka.pageX - Timosha.offsetWidth / 2 + 'px';
+            Timosha.style.top = svinka.pageY - Timosha.offsetHeight / 2 + 'px';
+        }
+
+        document.onmousemove = function (svinka) {
+            dvig(svinka);
+        }
+
+        Timosha.onmouseup = function () {
+            document.onmousemove = null;
+            Timosha.onmouseup = null;
+        }
+    };
+
+    const text = document.getElementById("text");
+    text.style.position = 'absolute';
+    text.onmousedown = function (e) {
+
+        document.body.appendChild(text);
+        text.style.zIndex = 1000;
+
+        function moving(e) {
+            text.style.left = e.pageX - text.offsetWidth / 2 + 'px';
+            text.style.top = e.pageY - text.offsetHeight / 2 + 'px';
+        }
+
+        document.onmousemove = function (e) {
+            moving(e);
+        }
+
+        text.onmouseup = function () {
+            document.onmousemove = null;
+            text.onmouseup = null;
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+	<link rel="stylesheet" type="text/css" href="file.css" />
+</head>
+<body>
+	<h1>Я, <mark>Kek</mark>, изучаю HTML5</h1>
+	<div>
+		<div id="line_block">
+			<p>Когда скоро экзамен, а я хлеб</p>
+			<audio src="Все_идет_по_плану.mp3" controls="controls"></audio>
+		</div>
+		<div id="line_block">
+			<p>Это я скачу от пересдач</p>
+			<video src="Тыгыдык.mp4" controls="controls"></video>
+		</div>	
+	</div>
+
+	<script>
+		const showCoordinates = (position) =>	alert("Широта: " + position.coords.latitude
+				+ "\nДолгота: " + position.coords.longitude);
+		const getCoordinates = () => navigator.geolocation.getCurrentPosition(showCoordinates);
+	</script>
+
+	<input type="button" value="Я здесь" onclick = "getCoordinates()">
+</body>
+</html>

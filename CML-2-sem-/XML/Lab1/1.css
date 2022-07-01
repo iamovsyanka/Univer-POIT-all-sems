@@ -1,0 +1,38 @@
+poit {
+    margin: auto; 
+    display: block; 
+    width: 500px; 
+}
+
+info {
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	border: 2px skyblue solid;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+universe {
+	display: block;
+	background-color: #B0E0E6;
+}
+
+ball {
+	display: block;
+	border-top: 2px skyblue solid;
+	background-color: #FFE4E1;
+}
+
+plan {
+	display: block;
+	border-top: 2px skyblue solid;
+	background-color: #E6E6FA;
+}
+
+gorod {
+	display: block;
+	border-top: 2px skyblue solid;
+	background-color: #FFFACD;
+}

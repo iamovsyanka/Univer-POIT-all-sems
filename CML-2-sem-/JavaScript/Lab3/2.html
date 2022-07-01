@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+</head>
+<body>
+<script>
+    let mas1 = new Array("Math.pow", "Array.pop", "Array.push", "Array.shift", "Math.round", "Math.floor", "Array.slime", "Array.sort");
+    document.write("Исходный массив: " + mas1 + "</br>");
+
+    let mas2 = new Array();
+    let mas3 = new Array();
+    for (var i = 0; i < mas1.length; i++) {
+        if (mas1[i] === "Math.pow" || mas1[i] === "Math.round" || mas1[i] === "Math.floor") {
+            mas2.push(mas1[i]);
+        }
+        else {
+            mas3.push(mas1[i]);
+        }
+    }
+
+    mas2.unshift("Math.sqrt");
+    mas3.push("Array.concat");
+    document.write("Массив объектов Math.\t" + mas2 + "</br>");
+    document.write("Массив объектов Array.\t" + mas3);
+</script>
+</body>
+</html>

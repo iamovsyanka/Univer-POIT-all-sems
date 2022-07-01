@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @-webkit-keyframes square {
+            0% {margin-left: 750px; margin-top: 500px;}
+            100% {margin-left: 750px; margin-top: 50px;}
+        }
+
+        @-webkit-keyframes squar {
+            0% {transform: rotate(0deg); margin-left: 750px;margin-top: 500px;}
+            50% {transform: rotate(180deg)}
+            100% {transform: rotate(360deg); margin-left: 750px;margin-top: 50px;}
+        }
+
+        @-webkit-keyframes circle {
+            100% {margin-left: 600px; margin-top: 50px;}
+        }
+
+        @-webkit-keyframes svinota {
+            0% {transform: rotate(0deg);}
+            50% {transform: rotate(180deg)}
+            100% {transform: rotate(360deg);}
+        }
+
+        div {
+            width: 1350px;
+            height: 600px;
+            background-color: orange;
+            position: absolute;
+        }
+
+        div:hover .square {
+            background-color: green;
+            animation: squar 10s infinite linear;
+        }
+
+        div:hover .circle {
+            background: radial-gradient(circle, #F0E68C 20%, #7FFFD4 50%, #483D8B); 
+            width: 100px;
+            height: 100px;
+            -webkit-border-radius: 50px;
+            animation: circle 10s infinite linear;
+        }
+
+        div:hover .svin {
+            width: 300px;
+            height: 300px;
+            animation: svinota 10s infinite linear;
+        }
+
+        .svin {
+            width: 200px;
+            height: 200px; 
+            margin-left: 100px;
+            margin-top: 150px;
+        }
+
+        .square {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          animation: square 10s infinite linear;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius:25px;
+            background-color: blue;
+        }
+    </style>       
+</head>
+<body>
+    <div>
+        <div class="square"></div>
+        <div class="circle"></div> 
+        <img class="svin" src="1f437.png">
+    </div>
+</body>
+</html>

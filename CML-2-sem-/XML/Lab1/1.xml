@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="1.css"?>
+<poit>
+	<info>
+		<universe>БГУИиР</universe>
+		<ball>369</ball>
+		<plan>20</plan>
+		<gorod>Минск</gorod>
+	</info>
+		<info>
+		<universe>БНТУ</universe>
+		<ball>340</ball>
+		<plan>30</plan>
+		<gorod>Минск</gorod>
+	</info>
+		<info>
+		<universe>БГТУ</universe>
+		<ball>332</ball>
+		<plan>40</plan>
+		<gorod>Брест</gorod>
+	</info>
+		<info>
+		<universe>ГТУ</universe>
+		<ball>148</ball>
+		<plan>50</plan>
+		<gorod>Гомель</gorod>
+	</info>
+</poit>
+

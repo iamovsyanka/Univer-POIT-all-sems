@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Последняя лабораторная</title>
+	<link rel="stylesheet" type="text/css" href="file.css" />
+</head>
+<body>
+	<header>
+		<h1>Я, <mark>КEK</mark>, изучаю HTML5</h1>
+	</header>
+
+	<nav>
+		<figure id="line_block">
+			<img src="Svinota.png" alt="Свинота">
+			<figcaption>Моя замечательная свинота</figcaption>
+		</figure>
+		<figure id="line_block">
+			<img src="js-logo.png" alt="js-logo">
+		</figure>
+		<figure id="line_block">
+			<img src="HTML5_logo.png" alt="HTML5-logo">
+		</figure>
+	</nav>
+
+	<main>
+		<div><p> <b>Header</b> — задает шапку сайта или раздела, в него обычно включен заголовок, а также внутрь могут помещаться другие теги, кроме более высоких по иерархии (html, body, head и т.п.) </p>
+		<p><b>Article</b> — тег, в который заключают элементы статьи: непосредственно текст, изображения, комментарии</p>
+		<p><b>Section</b> — разделяет веб-документ на смысловые секции, есть возможность вкладывать один тег section в другой</p>
+		<p><b>Footer</b> — подвал сайта, где содержится информация о контактах, адреса, ссылки, авторство и прочее</p>
+		<p><b>Nav</b> — тег html5 для навигации по сайту, в него помещаются наиболее приоритетные ссылки, хотя допустимо использование нескольких тегов на странице</p>
+		<p><b>Aside</b> — блок неосновного контента, как правило, боковая панель (сайдбар): рекламные блоки, рубрики, метки и т.д.</p></div>
+
+		<br><br>
+
+		<form name="data">
+			<fieldset>
+				<legend>Использование новых форм и атрибутов</legend>
+				<table>
+				<tr> <td><input required type="email" name="email" placeholder="Введите email" id="email"/> </td>
+				<td><input type="url" name="url" placeholder="Введите url"/></td></tr>
+				<tr><td><input required type="tel" name="tel" placeholder="Введите tel" pattern="[0-9]{12}"/></td>
+				<td><input type="number" name="number" placeholder="Числа" min="0" max="20" /></td></tr>
+				<tr><td><input type="range" name="range" placeholder="Числа" min="0" max="20" /></td>
+				<td><input type="color" name="color" value="#376DF6"></td></tr>
+				</table>
+				<input type="submit" value="Отправить"/> <input type="button" value="Process Code" onClick="printf();" />
+			</fieldset>
+		</form>
+	</main>
+
+	<footer>
+   		<p>Автор: KEK, 1 курс, 4 группа</p>
+   		<p id="email1">Контактная информация: </p>
+   		<p id="tel1">Мобильный телефон: </p>
+	</footer>
+
+		<script>
+			function printf() {
+				let text1 = document.getElementById("email1");
+				let text2 = document.getElementById("tel1");
+				text1.innerHTML += document.forms.data.email.value;
+				text2.innerHTML += document.forms.data.tel.value;
+			}
+		</script>
+</body>
+</html>

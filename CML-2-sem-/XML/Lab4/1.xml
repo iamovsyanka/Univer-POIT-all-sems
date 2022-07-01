@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="1.xslt"?>
+<gruppa>
+	<st>
+		<fam>Козловский</fam>
+		<name>Андрей</name>
+		<otch>Сергеевич</otch>
+		<srball>4</srball>
+		<data>2000</data>
+	</st>
+	<st>
+		<fam>Карпушевич</fam>
+		<name>Оксана</name>
+		<otch>Васильевна</otch>
+		<srball>7</srball>
+		<data>2001</data>
+	</st>
+	<st>
+		<fam>Петров</fam>
+		<name>Петр</name>
+		<otch>Петрович</otch>
+		<srball>3</srball>
+		<data>2000</data>
+	</st>
+	<st>
+		<fam>Сидоров</fam>
+		<name>Сидр</name>
+		<otch>Сидорович</otch>
+		<srball>8</srball>
+		<data>2001</data>
+	</st>
+</gruppa>

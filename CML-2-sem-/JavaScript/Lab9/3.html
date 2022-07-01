@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Движение по кривой линии</title>
+</head>
+<body>
+<img src="3.png" id="sv" style="position: absolute;" width="200px">
+<script>
+    let posLeft = 0;
+    let posTop = 0;
+    let posRight = 200;
+    let posBottom = 200;
+    const Timosha = document.getElementById('sv');
+    Timosha.onclick = function () {
+        const t1 = setInterval(move1, 10);
+
+        function move1() {
+            if (posLeft >= 200) {
+                if (posTop >= 200) {
+                    if (posRight === 0) {
+                        if (posBottom === 0) {
+                            clearInterval(t1);
+                        } else {
+                            posBottom -= 2;
+                            Timosha.style.top = posBottom + 'px';
+                        }
+                    } else {
+                        posRight -= 2;
+                        Timosha.style.left = posRight + 'px';
+                    }
+                } else {
+                    posTop += 2;
+                    Timosha.style.top = posTop + 'px';
+                }
+            } else {
+                posLeft += 2;
+                Timosha.style.left = posLeft + 'px';
+            }
+        }
+    };
+
+</script>
+</body>
+</html>
