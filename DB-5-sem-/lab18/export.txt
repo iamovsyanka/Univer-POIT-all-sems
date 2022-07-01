@@ -1,0 +1,30 @@
+SQL> select * from lab18;
+
+  INTVALUE CHARVALUE            DATEVALUE                                       
+---------- -------------------- ---------                                       
+       1.1 AAA                  01-DEC-20                                       
+       2.2 BBB                  02-DEC-20                                       
+       3.3 CCC                  03-DEC-20                                       
+       4.4 DDD                  04-DEC-20                                       
+       5.5 EEE                  05-DEC-20                                       
+       6.6 FFF                  06-DEC-20                                       
+       7.7 GGG                  07-DEC-20                                       
+       8.8 HHH                  08-DEC-20                                       
+       9.9 III                  09-DEC-20                                       
+        10 JJJ                  10-DEC-20                                       
+        11 KKK                  11-DEC-20                                       
+
+  INTVALUE CHARVALUE            DATEVALUE                                       
+---------- -------------------- ---------                                       
+        12 LLL                  12-DEC-20                                       
+        13 MMM                  01-JAN-20                                       
+        14 NNNN                 01-JAN-19                                       
+        15 OOOO                 01-JAN-18                                       
+        16 PPPPP                01-JAN-17                                       
+        17 XXXXX                01-JAN-16                                       
+        18 YYYYY                01-JAN-15                                       
+        19 ZZZZZ                01-JAN-14                                       
+
+19 rows selected.
+
+SQL> SPOOL OFF
