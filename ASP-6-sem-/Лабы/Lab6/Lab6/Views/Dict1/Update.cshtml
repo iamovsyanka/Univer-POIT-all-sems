@@ -1,0 +1,26 @@
+﻿@model JsonLib.Phone
+
+@{
+    ViewBag.Title = "Update";
+}
+
+@using Lab6.Helpers
+
+@section Header
+{
+    <header>
+        <h2>Update</h2>
+    </header>
+}
+
+@Html.UpdatePhoneForm((object)Model)
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Footer
+{
+    <footer>
+        <h2>Created by Ovsyanka</h2>
+    </footer>
+}

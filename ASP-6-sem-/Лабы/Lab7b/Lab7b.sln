@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asmx", "Asmx\Asmx.csproj", "{5481FA22-B552-43C6-A440-4A839D117260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "Forms\Forms.csproj", "{0E5E41DF-13C5-4480-BFCE-105860C3A5E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5481FA22-B552-43C6-A440-4A839D117260} = {5481FA22-B552-43C6-A440-4A839D117260}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5481FA22-B552-43C6-A440-4A839D117260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5481FA22-B552-43C6-A440-4A839D117260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5481FA22-B552-43C6-A440-4A839D117260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5481FA22-B552-43C6-A440-4A839D117260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E5E41DF-13C5-4480-BFCE-105860C3A5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5E41DF-13C5-4480-BFCE-105860C3A5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5E41DF-13C5-4480-BFCE-105860C3A5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5E41DF-13C5-4480-BFCE-105860C3A5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D675E4B9-1D16-421E-89D4-7179AFE0B645}
+	EndGlobalSection
+EndGlobal

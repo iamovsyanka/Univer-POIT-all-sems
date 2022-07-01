@@ -1,0 +1,216 @@
+﻿
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div>
+        <div id="tableBlock"></div>
+        <div id="editBlock">
+            <p><b>Edit contact</b></p>
+            <table>
+                <tr><td><input type="hidden" id="editId" /></td><td></td></tr>
+                <tr><td><label>Name: </label></td><td><input type="text" id="editName" required /></td></tr>
+                <tr><td><label>Phone: </label></td><td><input type="text" id="editPhone" required /></td></tr>
+            </table>
+            <button id="editRecord">Save</button>
+        </div>
+        <div id="createBlock">
+            <p><b>Add contact</b></p>
+            <table>
+                <tr><td><label>Name: </label></td><td><input type="text" id="addName" required /></td></tr>
+                <tr><td><label>Phone: </label></td><td><input type="text" id="addPhone" required /></td></tr>
+            </table>
+            <button id="addRecord">Save</button>
+        </div>
+    </div>
+
+    <div id="errors" style="color:red;"></div>
+
+    <script>
+        $(document).ready(function () {
+            GetAllRecords();
+
+            $("#editRecord").click(function (event) {
+                event.preventDefault();
+                EditRecord();
+            });
+
+            $("#addRecord").click(function (event) {
+                event.preventDefault();
+                AddRecord();
+            });
+
+        });
+
+        function GetAllRecords() {
+            $("#createBlock").css('display', 'block');
+            $("#editBlock").css('display', 'none');
+            $.ajax({
+                url: '/api/ts',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    WriteResponse(data);
+                },
+                error: function (x, y, z) {
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+
+        function AddRecord() {
+            let contact = {
+                Name: $('#addName').val(),
+                Phone: $('#addPhone').val(),
+            };
+
+            $.ajax({
+                url: '/api/ts/',
+                type: 'POST',
+                data: JSON.stringify(contact),
+                contentType: "application/json;charset=utf-8",
+                success: function (data, status) {
+                    $('#errors').empty();
+                    GetAllRecords()
+                },
+                error: function (jxqr, error, status) {
+                    let response = jQuery.parseJSON(jxqr.responseText);
+                    $('#errors').empty();
+                    $('#errors').append("<h2>" + response['Message'] + "</h2>");
+                    if (response['ModelState']['contact.Name']) {
+                        $.each(response['ModelState']['contact.Name'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                    if (response['ModelState']['contact.Phone']) {
+                        $.each(response['ModelState']['contact.Phone'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                }
+            });
+        }
+
+        function DeleteRecord(id) {
+
+            $.ajax({
+                url: '/api/ts/',
+                type: 'DELETE',
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(id),
+                success: function (data, status) {
+                    $('#errors').empty();
+                    GetAllRecords()
+                },
+                error: function (jxqr, error, status) {
+                    let response = jQuery.parseJSON(jxqr.responseText);
+                    $('#errors').empty();
+                    $('#errors').append("<h2>" + response['Message'] + "</h2>");
+                    if (response['ModelState']['contact.Name']) {
+                        $.each(response['ModelState']['contact.Name'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                    if (response['ModelState']['contact.Phone']) {
+                        $.each(response['ModelState']['contact.Phone'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                }
+            });
+        }
+
+        function EditRecord() {
+            let contact = {
+                Id: $('#editId').val(),
+                Name: $('#editName').val(),
+                Phone: $('#editPhone').val()
+            };
+            $.ajax({
+                url: '/api/ts/',
+                type: 'PUT',
+                data: JSON.stringify(contact),
+                contentType: "application/json;charset=utf-8",
+                success: function (data, status) {
+                    $('#errors').empty();
+                    GetAllRecords()
+                },
+                error: function (jxqr, error, status) {
+                    let response = jQuery.parseJSON(jxqr.responseText);
+                    $('#errors').empty();
+                    $('#errors').append("<h2>" + response['Message'] + "</h2>");
+                    if (response['ModelState']['contact.Name']) {
+                        $.each(response['ModelState']['contact.Name'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                    if (response['ModelState']['contact.Phone']) {
+                        $.each(response['ModelState']['contact.Phone'], function (index, item) {
+                            $('#errors').append("<p>" + item + "</p>");
+                        });
+                    }
+                }
+            });
+        }
+
+        function WriteResponse(contacts) {
+            var strResult = "<table><th>Id</th><th>Name</th><th>Phone</th>";
+            $.each(contacts, function (index, contact) {
+                strResult += "<tr><td>" + contact.Id + "</td><td> " + contact.Name + "</td><td>" +
+                    contact.Phone + "</td><td>" +
+                    "</td><td><button id='editItem' data-item='" + contact.Id + "' onclick='EditItem(this);' >Update</button></td>" +
+                    "<td><button id='delItem' data-item='" + contact.Id + "' onclick='DeleteItem(this);' >Delete</button></td></tr>";
+            });
+            strResult += "</table>";
+            $("#tableBlock").html(strResult);
+
+        }
+
+        function DeleteItem(el) {
+            var id = $(el).attr('data-item');
+            DeleteRecord(id);
+        }
+
+        function EditItem(el) {
+            var id = $(el).attr('data-item');
+            GetRecord(id);
+        }
+
+        function ShowRecord(contact) {
+            if (contact != null) {
+                $("#createBlock").css('display', 'none');
+                $("#editBlock").css('display', 'block');
+                $("#editId").val(contact.Id);
+                $("#editName").val(contact.Name);
+                $("#editPhone").val(contact.Phone);
+            }
+            else {
+                alert("Such contact doesn't exist");
+            }
+        }
+
+        function GetRecord(id) {
+            $.ajax({
+                url: '/api/ts/' + id,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    ShowRecord(data);
+                },
+                error: function (x, y, z) {
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

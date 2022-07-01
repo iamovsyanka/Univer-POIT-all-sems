@@ -1,0 +1,32 @@
+﻿body {
+    background-color: rgba(189, 213, 242, 1);
+}
+
+th, td {
+    border: 1px solid darkcyan;
+}
+
+.thead td {
+    font-weight: bold;
+    font: bold;
+    background-color: cornflowerblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+        color: red;
+    }
+
+input {
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+h2 {
+    font-weight: bolder;
+    color: Highlight;
+}
