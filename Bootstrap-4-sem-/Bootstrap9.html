@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Модальные окна Bootstrap</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+	    <h1 class="text-center">Bootstrap - Демонстрация работы компонента modal</h1>
+	    <hr>
+	</div>
+	<div class="container">
+	    <p>1. Активирование модального окна с помощью атрибутов data</p>
+	    <p><a href="#myModal1" class="btn btn-primary" data-toggle="modal">Открыть модальное окно 1</a></p>
+	    <div id="myModal1" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <h4 class="modal-title">Заголовок модального окна 1</h4>
+	                </div>
+	                <div class="modal-body">
+	                    Содержимое модального окна 1...
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+	             	</div>
+	        	</div>
+	    	</div>
+		</div>
+
+	    <p>2. Открытие модального окна с помощью JavaScript</p>
+	    <p><a href="#myModal2" id="btn2" class="btn btn-primary">Открыть модальное окно 2</a></p>
+	    <div id="myModal2" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <h4 class="modal-title">Заголовок модального окна 2</h4>
+	                </div>
+	                <div class="modal-body">
+	                    Содержимое модального окна 2...
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+
+	    <p>3. Изменение размеров модального окна.</p>
+	    <p>
+	        <button class="btn btn-primary" data-toggle="modal" data-target="#largeModal">Открыть ширикое модальное окно
+	        </button>
+	    </p>
+	    <p>
+	        <button class="btn btn-primary" data-toggle="modal" data-target="#smallModal">Открыть узкое модальное окно
+	        </button>
+	    </p>
+	    <div id="largeModal" class="modal fade" tabindex="-1" role="dialog">
+	        <div class="modal-dialog modal-lg">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <h4 class="modal-title">Заголовок модального окна</h4>
+	                </div>
+	                <div class="modal-body">
+	                    Содержимое модального окна...
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div id="smallModal" class="modal fade" tabindex="-1" role="dialog">
+	        <div class="modal-dialog modal-sm">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	                    <h4 class="modal-title">Заголовок модального окна</h4>
+	                </div>
+	                <div class="modal-body">
+	                    Содержимое модального окна...
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <hr>
+	</div>
+
+	<script>
+	    $(function () {
+	        $("#btn2").click(function () {
+	            $("#myModal2").modal('show');
+	        });
+	    });
+	</script>
+</body>
+</html>

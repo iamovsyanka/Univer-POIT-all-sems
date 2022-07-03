@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Формы Bootstrap</title>
+	<link href = "css/bootstrap.min.css" rel = "stylesheet">
+</head>
+<body>
+	<form>
+		<h3 class="text-info text-center">Вход в личный кабинет</h3>
+
+		<div>
+		    <div class="form-group col-md-3">
+		      	<label for="inputEmail">Email</label>
+		      	<input type="email" class="form-control" id="inputEmail" placeholder="Введите еmail">
+		    </div>
+	    	<div class="form-group col-md-3">
+	      		<label for="inputPassword">Пароль</label>
+	      		<input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль" aria-describedby="passwordHelpBlock">
+	      		<small id="passwordHelpBlock" class="form-text text-muted">
+			    	Пароль должен содержать 8-20 символов
+			 	</small>
+	    	</div>
+	  	</div>
+
+		<div class="form-check mx-sm-3 mb-2">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+			<label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+		</div>
+
+		<button type="submit" class="btn btn-primary mx-sm-3 mb-2 btn-lg">Войти</button>
+	</form>
+</body>
+</html>

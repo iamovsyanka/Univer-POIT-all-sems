@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Выпадающий список Bootstrap</title>
+	<link href = "dist/css/bootstrap.min.css" rel = "stylesheet">
+</head>
+<body>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+  	<script src="dist/js//bootstrap.min.js"></script>
+
+	<div>
+		<button class="btn btn-success">
+			 Поставь <i class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></i>, приятель
+		</button>
+
+		<a href="#">Онлайн <span class="badge">15</span></a>
+
+		<div class="dropdown">
+	      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown"
+	        aria-haspopup="true" aria-expanded="true">
+	        <i class="glyphicon glyphicon-eye-close"></i> 
+	        Меню
+	      	<span class="caret"></span>
+	      </button>
+	      <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+	        <li><a href="#"><i class="glyphicon glyphicon-gift" aria-hidden="true"></i> Иконка1</a></li>
+	        <li><a href="#"><i class="glyphicon glyphicon-headphones" aria-hidden="true"></i> Иконка2</a></li>
+	        <li><a href="#"><i class="glyphicon glyphicon-fire" aria-hidden="true"></i> Иконка3</a></li>
+	        <li role="separator" class="divider"></li>
+	        <li><a href="#"><i class="glyphicon glyphicon-send" aria-hidden="true"></i> Иконка4</a></li>
+	      </ul>
+	    </div>
+	    
+	</div>
+</body>
+</html>

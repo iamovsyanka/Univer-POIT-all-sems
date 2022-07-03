@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Статья Bootstrap</title>
+	<link href = "css/bootstrap.min.css" rel = "stylesheet">
+</head>
+<body>
+	<script src = "http://code.jquery.com/jquery-latest.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+
+	<h1 class="text-center">Привет, 1 лабораторная Bootstrap!</h1>
+
+	<div class="alert alert-success" role="alert">Отлично!Так держать </div>
+	<div class="alert alert-info" role="alert">Подсказка!Тут должна быть важная информация</div>
+	<div class="alert alert-warning" role="alert">Warning!Будь внимательнее  </div>
+	<div class="alert alert-danger" role="alert">Ошибка!Сервер недоступен </div>
+
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+    </ul>
+
+	<button type="button" class="btn btn-default">Кнопка</button>
+	<button type="button" class="btn btn-primary">Основная</button>
+	<button type="button" class="btn btn-success">Успех</button>
+	<button type="button" class="btn btn-info">Информация</button>
+	<button type="button" class="btn btn-warning">Внимание</button>
+	<button type="button" class="btn btn-danger">Ошибка</button>
+	<button type="button" class="btn btn-link">Ссылка</button>
+
+	<table class="table">
+	 <thead>
+		 <tr>
+		 <th>Имя</th>
+		 <th>Фамилия</th>
+		 <th>Почта</th>
+		 </tr>
+	 </thead>
+	 <tbody>
+		 <tr>
+			 <td>Иван</td>
+			 <td>Николайчук</td>
+			 <td>ivan@example.com</td>
+		 </tr>
+		 <tr>
+			 <td>Мария</td>
+			 <td>Иванова</td>
+			 <td>mary@example.com</td>
+		 </tr>
+		 <tr>
+			 <td>Юлия</td>
+			 <td>Петренко</td>
+			 <td>julia@example.com</td>
+		 </tr>
+	 </tbody>
+	 </table>
+
+	<div class="btn-group">
+	<button type="button" class="btn btn-default">Кнопка</button>
+	<button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+		<ul class="dropdown-menu">
+		<li><a href="#">Пункт 1</a></li>
+		<li><a href="#">Пункт 2</a></li>
+		<li class="divider"></li>
+		<li><a href="#">Пункт 3</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>
