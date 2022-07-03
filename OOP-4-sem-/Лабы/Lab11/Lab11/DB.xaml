@@ -1,0 +1,108 @@
+﻿<Window x:Class="Lab11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ADO.Net" Height="450" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF2999B4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="633*"/>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="174*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="20" VerticalAlignment="Top" Margin="0,0,37.8,0" >
+            <MenuItem Header="DataBase">
+                <MenuItem Header="Products">
+                    <MenuItem Header="Select" Click="SelectAll_Click"/>
+                    <MenuItem Header="Delete" Click="DeleteProduct_Click">
+                        <TextBlock Text="Id:"/>
+                        <TextBox x:Name="IdProduct" Width="35"/>
+                    </MenuItem>
+                    <MenuItem Header="Delete all" Click="DeleteAllProducts_Click"/>
+                </MenuItem>
+                <MenuItem Header="Producers">
+                    <MenuItem Header="Select" Click="SelectAll_Click"/>
+                    <MenuItem Header="Delete" Click="DeleteProducer_Click">
+                        <TextBlock IsEnabled="False" Text="Id:"/>
+                        <TextBox x:Name="IdProducer" Width="35"/>
+                    </MenuItem>
+                    <MenuItem Header="Delete all" Click="DeleteAllProducers_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Sort">
+                <MenuItem Header="Products">
+                    <MenuItem Header="Name" Click="SortByName_Click"/>
+                    <MenuItem Header="IdProducer" Click="SortByIdProducer_Click"/>
+                </MenuItem>
+                <MenuItem Header="Producers">
+                    <MenuItem Header="Country" Click="SortByCountry_Click"/>
+                    <MenuItem Header="Address" Click="SortByIdAddress_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Search">
+                <MenuItem Header="Product">
+                    <MenuItem Header="Name" Click="SearchName_Click">
+                        <TextBox x:Name="SearchName"/>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Button Content="Add" HorizontalAlignment="Left" Margin="32.2,195,0,0" VerticalAlignment="Top" Width="78" Height="21" Click="InsertProduct_Click" Grid.Column="1"/>
+
+        <DataGrid x:Name="ProductDB" Height="362" Margin="22,35,0,0" Width="309">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" IsReadOnly="True" Header="ID" Width="30"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Image}" Header="Image" Width="80"/>
+                <DataGridTextColumn Binding="{Binding IdProducer}" Header="IdProducer" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox x:Name="nameText" Margin="9.2,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" MaxLines="50" Grid.Column="1"/>
+        <TextBox x:Name="idProducerText"  Margin="10.2,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Grid.Column="1"/>
+        <TextBox x:Name="countryText" Margin="8,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <TextBox x:Name="addressText" Margin="9,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <TextBlock Margin="8,130,0,0" Text="Address:" Grid.Column="2" Height="16" Width="45"/>
+        <TextBlock Margin="9,79,0,0" Text="Country:" Grid.Column="2" Height="16" Width="45"/>
+        <TextBlock Margin="9.2,145,0,0" Text="IdProducer:" Grid.Column="1" Height="16" Width="61"/>
+        <Button x:Name="image" Content="Add image" HorizontalAlignment="Left" Margin="7.2,116,0,0" VerticalAlignment="Top" Width="122" Click="image_Click" Grid.Column="1" Height="19"/>
+        <TextBlock Margin="9.2,57,0,0" Text="Name:" Grid.Column="1" Height="16" Width="34"/>
+
+        <DataGrid x:Name="ProducerDB" Height="362" Margin="331,35,0,0" Width="264">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="65"/>
+                <DataGridTextColumn Binding="{Binding Country}" Header="Country" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Address}" Header="Address" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Add" HorizontalAlignment="Left" Margin="25,193,0,0" VerticalAlignment="Top" Width="78" Height="21" Click="InsertProducer_Click" Grid.Column="2"/>
+
+        <Button Content="Update" HorizontalAlignment="Left" Margin="34.2,380,0,0" VerticalAlignment="Top" Width="78" Height="21" Click="UpdateProduct_Click" Grid.Column="1"/>
+        <TextBox x:Name="nameUpdate" Margin="11.2,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" MaxLines="50" Grid.Column="1"/>
+        <TextBox x:Name="idProducerUpdate"  Margin="11.2,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Grid.Column="1"/>
+        <TextBlock Margin="14.2,329,0,0" Text="IdProducer:" Grid.Column="1" Height="16" Width="61"/>
+        <TextBlock Margin="11.2,278,0,0" Text="Name:" Grid.Column="1" Height="16" Width="34"/>
+        <TextBox x:Name="IdProductUpdate" Margin="11.2,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" MaxLines="50" Grid.Column="1"/>
+        <TextBox x:Name="countryUpdate" Margin="15,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <TextBox x:Name="addressUpdate" Margin="16,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <TextBlock Margin="16,327,0,0" Text="Address:" Grid.Column="2" Height="16" Width="45"/>
+        <TextBlock Margin="16,277,0,0" Text="Country:" Grid.Column="2" Height="16" Width="45"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="38,380,0,0" VerticalAlignment="Top" Width="78" Height="21" Click="UpdateProducer_Click" Grid.Column="2"/>
+        <TextBox x:Name="IdProducerUpdate" Margin="17,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" MaxLines="50" Grid.Column="2"/>
+        <TextBlock Text="Id:" Margin="15.2,228,0,0" Grid.Column="1" Height="16" Width="13"/>
+        <TextBlock Text="Id:" Margin="18,227,0,0" Grid.Column="2" Height="16" Width="13"/>
+        <TextBlock Text="Product" Margin="31.2,19,0,0" FontSize="20" Grid.Column="1" Height="26" />
+        <TextBlock Text="Producer" Margin="25,19,0,0" FontSize="20" Grid.Column="2" Height="26"/>
+    </Grid>
+
+</Window>

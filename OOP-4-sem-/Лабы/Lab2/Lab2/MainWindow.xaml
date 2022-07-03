@@ -1,0 +1,13 @@
+﻿<Window x:Class="Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Adapter" HorizontalAlignment="Left" Margin="86,37,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Button_Click_Adapter"/>
+        <Button Content="Decorator" HorizontalAlignment="Left" Margin="343,37,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Button_Click_Decorator"/>
+        <Button Content="Map" HorizontalAlignment="Left" Margin="613,37,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Button_Click_Map"/>
+    </Grid>
+</Window>

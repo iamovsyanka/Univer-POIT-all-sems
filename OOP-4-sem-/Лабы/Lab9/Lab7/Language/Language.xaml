@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <v:String x:Key="File">File</v:String>
+    <v:String x:Key="New">New</v:String>
+    <v:String x:Key="Save">Save</v:String>
+    <v:String x:Key="Open">Open</v:String>
+    <v:String x:Key="Close">Close</v:String>
+    <v:String x:Key="Edit">Edit</v:String>
+    <v:String x:Key="Undo">Undo</v:String>
+    <v:String x:Key="Redo">Redo</v:String>
+    <v:String x:Key="Copy">Copy</v:String>
+    <v:String x:Key="Cut">Cut</v:String>
+    <v:String x:Key="Find">Find</v:String>
+    <v:String x:Key="Paste">Paste</v:String>
+    <v:String x:Key="Delete">Delete</v:String>
+    <v:String x:Key="Choose">Language</v:String>
+    <v:String x:Key="Style">Style</v:String>
+    <v:String x:Key="Blue">Blue</v:String>
+    <v:String x:Key="Black">Black</v:String>
+    <v:String x:Key="Yellow">Yellow</v:String>
+    <v:String x:Key="Russian">Russian</v:String>
+    <v:String x:Key="English">English</v:String>
+    <v:String x:Key="Window">Window</v:String>
+    <v:String x:Key="About">About</v:String>
+
+</ResourceDictionary>
