@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<company>
+    <director name="Alex" salary="1000000"/>
+    <chiegEngineer name="Lapenko" age="28" experience="10" Qualification="Qualification.senior"/>
+</company>

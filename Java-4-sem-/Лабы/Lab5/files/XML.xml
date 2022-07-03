@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <programmer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="files/XML.xsd">
+        <name>Andrey</name>
+        <age>19</age>
+        <experince>2</experince>
+        <qualification>senior</qualification>
+    </programmer>

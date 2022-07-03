@@ -1,0 +1,18 @@
+2020-06-01 23:25:45 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:25:46 INFO  AbstractRepository:123 - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO users(password, login )VALUES('147', 'qwerty' );
+2020-06-01 23:25:46 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:32:38 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:32:38 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:33:39 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:33:39 INFO  AbstractRepository:123 - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO users(password, login )VALUES('147', 'qwert' );
+2020-06-01 23:33:39 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:40:57 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:40:57 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:40:57 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:40:57 INFO  AbstractRepository:123 - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO contacts(phone, surname, name )VALUES('–î–û–ú–ê–®–ù–ò–ô', '–ü–ê–†–ö–ï–†', '–ü–ò–¢–û–†' );
+2020-06-01 23:40:58 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:43:48 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:43:48 INFO  AbstractRepository:123 - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO contacts(phone, surname, name )VALUES('ƒŒÃ¿ÿÕ»…', 'œ¿– ≈–', 'œ»“Œ–' );
+2020-06-01 23:43:48 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
+2020-06-01 23:43:48 INFO  ConnectionPool:84 - Connection was taken, the are free connection 4
+2020-06-01 23:43:48 INFO  ConnectionPool:94 - Connection was released, the are free connection 5
