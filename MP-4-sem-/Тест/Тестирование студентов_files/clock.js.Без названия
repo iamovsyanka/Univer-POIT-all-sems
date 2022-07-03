@@ -1,0 +1,21 @@
+var images = [];
+for (var i = 0; i < 10; ++i) images[i] = "<img src=images/digits/" + i + ".gif>";
+images[10] = "<img src=images/digits/doubledot.gif>"
+
+function showFilled(Value)
+{
+	Value = parseInt(Value);
+	return images[parseInt(Value / 10)] + images[Value % 10];
+}
+
+function StartClock()
+{
+  	document.getElementById("clock").innerHTML = showFilled(hour) + images[10] + showFilled(min);
+  	if (--min < 0)
+	{
+	  	--hour;
+	  	min = 59;
+	  	window.location.reload(true);
+  	}
+  	if (hour >= 0) setTimeout("StartClock()", 60000);
+}
