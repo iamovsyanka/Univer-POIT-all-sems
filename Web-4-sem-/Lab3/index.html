@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lab3</title>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+</head>
+<body>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){jQuery('#ex1').click(function(){jQuery(this).load('1.html');})});
+        jQuery(document).ready(function(){jQuery('#ex2').mouseover(function(){jQuery(this).load('2.html');})});
+        jQuery(document).ready(function(){jQuery('#ex3').mouseout(function(){jQuery(this).load('3.html');})});
+        jQuery(document).ready(function(){jQuery('#ex4').dblclick(function(){jQuery(this).load('4.html');})});
+    </script>    
+
+    <div id="ex1">Click to update</div>
+    <div id="ex2">Click to update</div>
+    <div id="ex3">Click to update</div>
+    <div id="ex4">Click to update</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab10</title>
+</head>
+<body>
+	<script>
+		var div = document.createElement("div");
+		function getClock(url)
+		{
+		  var request; 
+		  if(window.XMLHttpRequest)      request = new XMLHttpRequest(); 
+		  else if(window.ActiveXObject)  request = new ActiveXObject("Microsoft.XMLHTTP");  
+		  else  return; 
+
+		  request.onreadystatechange = function()
+		  {
+		    if(request.status===200)
+		    {     	      
+				div.innerHTML = request.responseText;
+				document.body.append(div);
+		    }
+		    else if(request.status===404)
+		    {
+		      alert("Ошибка: запрашиваемый скрипт не найден!");
+		    }
+		  } 
+		  request.open ("POST", url, true); 
+		  request.send ("");
+		}
+
+		setInterval(getClock, 1000, "server.php");	
+	</script> 
+</body>
+</html>

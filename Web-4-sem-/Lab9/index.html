@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab9</title>
+</head>
+<body>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function($) {	
+		var numbers = [127,25,32,47,65];
+		var numbersTo2 = [];
+		var numbersFrom2 = [];
+
+		for (var i = 0; i < numbers.length; i++) {
+			numbersTo2.push(numbers[i].toString(2));
+		}
+
+		for (var i = 0; i < numbersTo2.length; i++) {
+			numbersFrom2.push(parseInt(numbersTo2[i], 2));
+		}
+
+		console.log(numbers);
+		console.log(numbersTo2);
+		console.log(numbersFrom2);
+	});
+	</script>
+</body>	
+</html>

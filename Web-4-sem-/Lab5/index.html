@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Comet</title>
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <script language="JavaScript" type="text/javascript" src="https://comet-server.ru/CometServerApi.js" ></script>
+</head>
+<body>
+    <div id="WebChatFormForm"/></div> 
+    <input type="text" id="WebChatNameID" placeholder="Enter name"> <br>
+    <textarea id = "WebChatTextID" placeholder = "Message" ></textarea><br>
+ 
+    <input type="button" onclick="web_send_msg();" value="Send" >
+    <div id="answer_div" ></div>
+ 
+    <script>
+        function strip(html)
+        {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = html;
+
+            return tmp.textContent || tmp.innerText || "";        
+        }
+
+        function web_send_msg()
+        {   
+            var text = $("#WebChatTextID").val(); 
+            var name = $("#WebChatNameID").val(); 
+            $("#WebChatTextID").val("");  
+            $("#WebChatFormForm").append("<p><b>"+strip(name)+": </b>"+text+"</p>");
+            CometServer().web_pipe_send("web_chat_pipe", {"text":text, "name":name});
+        }
+
+        $(document).ready(function()
+        {
+            CometServer().start({dev_id:1}) 
+            CometServer().subscription("web_chat_pipe", function(msg)
+            {
+                console.log(msg)
+                $("#WebChatFormForm").append("<p><b>"+strip(msg.data.name)+": </b>"+msg.data.text+"</p>");
+            });
+        });
+    </script>
+</body>
+</html>

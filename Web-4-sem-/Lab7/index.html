@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab7</title>
+</head>
+<body>
+    <script type='text/javascript'>        
+        function start() {
+            xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'bookbase.json', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {                
+                    var json = eval('(' + xhttp.responseText + ')');
+                    document.getElementById('block').style.display = 'block';                                         
+                    document.getElementById('result').innerHTML = json.bookbase[5].title + ", " + json.bookbase[6].title + ", " + json.bookbase[7].title; 
+            }
+        }
+    </script>
+    
+    <input type='button' value='Получить' onclick='start()'/>
+    <br/><br/>
+    <div id='block' style='display:none;'>    	
+        <hr/><p>Выведите содержимое 6-го, 7-го и 8-го тэга title на страницу <b><span id='result'></span></b></p><hr/>
+    </div>
+</body>
+</html>

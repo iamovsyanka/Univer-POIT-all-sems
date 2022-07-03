@@ -1,0 +1,29 @@
+body {
+    background-color: antiquewhite;
+}
+
+.block {
+    position: absolute;
+    background-color: rgb(29, 243, 154);
+    top: 35px;
+    width: 90px;
+    height: 40px;
+}
+
+.box {
+    position: relative;
+    left: 14px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #a82244;
+    background: blue;
+}
+
+#edge {
+    width: 500px;
+    height: 200px;
+    border: 1px solid #3377af;
+    padding: 5px;
+    top: 200px;
+}
+

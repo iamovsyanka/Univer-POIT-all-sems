@@ -1,0 +1,7 @@
+body {position: relative;}
+/* ######################### MENU STYLE #########################*/
+#imPage { z-index: 9000; }
+#imMnMn li .imMnMnBorder .imMnMnImg img { padding-top: 11px; }
+#imMnMn li .imMnMnBorder .imMnMnImg img {position: absolute; right: 11px; top: 12px; }
+#imMnMn li .imMnMnBorder .imMnMnTxt { position: relative; padding-right: 16px; }
+#imMnMn ul ul li .imMnMnLevelImg { z-index: 10000; float: left; display: block; width: 7px; height: 7px; background-image: url('../res/imIconMenuRight.gif'); background-position: center center; margin-right: 0;}
