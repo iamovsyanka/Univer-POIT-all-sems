@@ -1,0 +1,5 @@
+name: slogan
+description: Provide a config override from custom module
+package: CodimTh
+type: module
+core_version_requirement: ^9

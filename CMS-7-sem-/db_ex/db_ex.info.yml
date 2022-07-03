@@ -1,0 +1,7 @@
+name: db_ex
+description: Creates a page showing "Hello World".
+package: Custom
+
+type: module
+core_version_requirement: ^9
+
